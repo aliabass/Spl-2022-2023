@@ -1,0 +1,52 @@
+BONUS CHALLENGE FORM
+--------------------
+
+For each bonus challenge you have implemented, please replace the sentence "We are not entitled to this bonus."
+with a short description of:
+
+1. How it was implemented in your code
+2. Where it was used (in which class methods).
+3. How you tested that it is working correctly.
+
+--------------------
+
+1. Fully supporting all configuration fields and avoiding the use of magic numbers
+
+1-We avoided Using magic numbers and used the env.confing..... for each loop / size so it matches every configuration file
+2-We used it in Table,Player and Dealer classes (you can see it in the counstructor and in the loops of each class)
+3-We changed the configuration file and many times and tried evrey single combination and it woreked great
+
+--------------------
+
+2. Terminating all threads (that you created) gracefully and in reverse order to the order they were created in.
+
+1-We creaded a Tread array in the dealer for each player so when the dealer is done working he will wait for all the threads in the array to be terminated using Join function and we iterated the array in revers oreder
+2-it was used in the Dealer class and we created a waitForPlayersThread function .
+3-we printed a line for each thread that is done and we compared the line when the game is done and saw that it printed 
+Player n is terminated
+player n-1 is terminated
+.
+.
+.
+player 0 is terminated
+Dealer is terminated
+
+
+--------------------
+
+3. Handling the config.turnTimeoutMillis value as follows:
+config.turnTimeoutMillis < 0: display nothing.
+config.turnTimeoutMillis = 0: display a timer since the last action (reshuffle or set collected).
+Note: in modes without a countdown timer the dealer must ensure there is always at least one legal set on the table.
+
+We are not entitled to this bonus.
+
+--------------------
+
+4. Making sure that the threads do not wake up unless some actual job needs to be done (e.g., a value needs to be
+changed on the display, key input needs to be handled, etc.) and the only threads created by you are:
+1 thread per player + 1 additional thread for non-human players.
+
+*note we did not implement this bouns fully
+1-We only created the player Threads and the ai thread if the player is non human
+2-in the Dealer class we created the Player threads and in the Player class we created the ai thread if needed
